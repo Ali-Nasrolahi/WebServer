@@ -40,7 +40,13 @@ private:
     struct sockaddr_in ServerAddress, ClientAddress;
     char hostName[MAX_HOST_NAME];
 
-};
+    friend TCPConnection;
 
+};
+class TCPConnection : public Server{
+public:
+
+private:
+};
 
 #endif
