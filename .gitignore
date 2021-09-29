@@ -30,4 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Customs
 *.todo
+*.vscode
+lib/Makefile

@@ -14,39 +14,39 @@
 #include <iostream>
 
 constexpr uint16_t MAX_PACKET_SIZE {16384}; // range: 0 -> 65,535 bytes 
-constexpr uint16_t MAX_HOST_NAME {256}; // 256 characters accepted
+constexpr uint16_t MAX_HOST_NAME_LEN {256}; // 256 characters accepted
+constexpr uint16_t DEFAULT_PORT {8080};
 
 
 class Server
 {
 public:
     //Constructors
-    explicit Server(uint16_t);
-    explicit Server(const char*);
+    explicit Server();
+    explicit Server(const uint16_t &);
+    explicit Server(const char* &);
+    explicit Server(const Server* &);
+    explicit Server(const std::string &);
+    
+
 
     //Getters
     const uint16_t getPortnum() const;
     const char* getHostname();
 
     //Setters
-    const int setHostname(const char*); //Not Permitted
+    const int setHostname(const char* &); //Not Permitted
 
 
-    void checkError(const int, const char*) const; //Simple Error displayer
+    void checkError(const int &, const char* &) const; //Simple Error displayer
 
 
-private:
+protected:
     const uint16_t PortNumber;
     struct sockaddr_in ServerAddress, ClientAddress;
-    char hostName[MAX_HOST_NAME];
+    char hostName[MAX_HOST_NAME_LEN];
 
-    friend TCPConnection;
 
-};
-class TCPConnection : public Server{
-public:
-
-private:
 };
 
 #endif
