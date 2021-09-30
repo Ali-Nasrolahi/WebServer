@@ -21,7 +21,7 @@ constexpr uint16_t DEFAULT_PORT {8080};
 class Server
 {
 public:
-    //Constructors
+    // Constructors
     explicit Server();
     explicit Server(const uint16_t &);
     explicit Server(const char* &);
@@ -30,23 +30,20 @@ public:
     
 
 
-    //Getters
+    // Getters
     const uint16_t getPortnum() const;
     const char* getHostname();
 
-    //Setters
-    const int setHostname(const char* &); //Not Permitted
+    // Setters
+    const int setHostname(const char* &); // Not Permitted
 
 
-    void checkError(const int &, const char* &) const; //Simple Error displayer
+    virtual void checkError(const int &, const char* &) const; // Simple Error displayer
 
 
 protected:
     const uint16_t PortNumber;
-    struct sockaddr_in ServerAddress, ClientAddress;
     char hostName[MAX_HOST_NAME_LEN];
-
-
 };
 
 #endif
