@@ -1,6 +1,6 @@
 #include "../include/Server.hpp"
 
-// Server-Class's Constructors and Methodes Definitons
+// Server-Class's Constructors and Methods Definitons
 Server::Server(): PortNumber(DEFAULT_PORT){}
 Server::Server(const uint16_t &PortNumber): PortNumber(PortNumber){}
 Server::Server(const char* &PortNumber): PortNumber((int) atoi(PortNumber)){}

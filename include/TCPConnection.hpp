@@ -13,10 +13,10 @@ public:
      explicit TCPConnection();
      explicit TCPConnection(const Server &);
 
-     // Manipulative Methodes
+     // Manipulative Methods
      static void checkError(const int &, const std::string &);
 
-     // Connection Methodes
+     // Connection Methods
      static void CreateASocket(const int &, const int&, const int&); // args respectively: Domain, Type, Protocol
 
 private:
