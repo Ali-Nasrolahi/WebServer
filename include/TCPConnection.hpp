@@ -17,8 +17,7 @@ public:
      static int checkError(const int &, const std::string &); // return 0 for Successful operation.
 
      // Connection Methods
-     void CreateASocket(const int & = AF_INET,
-                        const int & = SOCK_STREAM, const int & = 0) const;
+     void CreateASocket(const int & = AF_INET, const int & = SOCK_STREAM, const int & = 0) const;
      void Bind() const;
      void Listen(const int & = 4) const;
      void Accept() const;
