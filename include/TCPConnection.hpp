@@ -22,6 +22,8 @@ public:
      void Listen(const int & = 4) const;
      void Accept() const;
      void PrintConnectedSocket() const;
+     void SendOnTCP() const;
+     void ReceiveOnTCP() const;
 
 private:
      const Server server;

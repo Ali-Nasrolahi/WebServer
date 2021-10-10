@@ -8,10 +8,13 @@ constexpr int16_t Client_Buffer = 1024;
 class Client : public Server
 {
 public:
-  explicit Client(const int &, const char *&);
+  explicit Client();
+  explicit Client(const int &, const char *);
   void CreateASocket(const int & = AF_INET, const int & = SOCK_STREAM, const int & = 0) const;
-  void setHost(const char *&) const;
-  void connect() const;
+  void setHost(const int & = AF_INET) const;
+  void Connect() const;
+  void Send() const;
+  void Receive() const;
 
 private:
   const int Port;
@@ -19,7 +22,7 @@ private:
   const char *Hostname;
   static sockaddr_in ServerAddress;
   static struct hostent *Server;
-  static int8_t Buffer[Client_Buffer];
+  static char Buffer[Client_Buffer];
 };
 
 #endif
