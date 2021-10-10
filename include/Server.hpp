@@ -10,8 +10,11 @@
 #include <netdb.h>
 
 // C-libs & IO
+#include <stdio.h>
+#include <cstring>
 #include <stdlib.h>
 #include <iostream>
+
 
 constexpr uint16_t MAX_PACKET_SIZE {16384}; // range: 0 -> 65,535 bytes 
 constexpr uint16_t MAX_HOST_NAME_LEN {256}; // 256 characters accepted

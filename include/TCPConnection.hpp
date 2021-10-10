@@ -6,7 +6,7 @@
 
 constexpr int16_t _Buffer_Size = 1024;
 
-class TCPConnection : public Server 
+class TCPConnection : public Server
 {
 public:
      // Constructors
@@ -14,10 +14,15 @@ public:
      explicit TCPConnection(const Server &);
 
      // Manipulative Methods
-     static void checkError(const int &, const std::string &);
+     static int checkError(const int &, const std::string &); // return 0 for Successful operation.
 
      // Connection Methods
-     static void CreateASocket(const int &, const int&, const int&); // args respectively: Domain, Type, Protocol
+     void CreateASocket(const int & = AF_INET,
+                        const int & = SOCK_STREAM, const int & = 0) const;
+     void Bind() const;
+     void Listen(const int & = 4) const;
+     void Accept() const;
+     void PrintConnectedSocket() const;
 
 private:
      const Server server;
