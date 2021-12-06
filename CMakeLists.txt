@@ -8,6 +8,9 @@ set(CMAKE_CXX_COMPILER "g++")
 #Set Static Libs properties
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
+#Executable dir settings
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+
 #Libs needed for building test files
 add_subdirectory(src)
 
