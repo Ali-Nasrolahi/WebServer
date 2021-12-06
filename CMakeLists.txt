@@ -5,6 +5,11 @@ project(Weby)
 #Set Compiler Properties
 set(CMAKE_CXX_COMPILER "g++")
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED on)
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+
 #Set Static Libs properties
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
